@@ -38,7 +38,6 @@ void open_fill (vector<vector<int>>& r, int& s, int& n) {
         pch = strtok(NULL, "\r\n");
     }
     s = start;
-    //cout << start << endl;
     vector<vector<int>> rows(0);
     unsigned long i;
     for (i = 0; i < lines.size(); i++) {
@@ -62,20 +61,11 @@ void open_fill (vector<vector<int>>& r, int& s, int& n) {
     */
     r = rows;
     n = rows.size();
-   // return rows;
-    //cout << "rows[1][1]=" << rows[1][1] << endl;
 }
 
 void dfs(vector<int>& visited, vector<vector<int>>& matrix, int cur, int n, vector<int>& colors, ofstream& out) {
     colors[cur] = GRAY;
     visited[cur] = 1;
-    /*
-    ofstream out;
-    out.open("C:\\tmp\\fileout.txt", ios::trunc);// , ios::app&& ios::trunc);
-    if (!out) {
-        cout << "Fule not open" << endl;
-    }
-    */
     for (int i = 0; i < n; i++) {
         if (matrix[cur][i] == 1) {
             if (cur != i) {
@@ -95,7 +85,6 @@ void dfs(vector<int>& visited, vector<vector<int>>& matrix, int cur, int n, vect
         }
     }
     colors[cur] = BLACK;
-    //out.close();
 }
 
 int main() {
